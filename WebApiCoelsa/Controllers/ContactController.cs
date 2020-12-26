@@ -70,9 +70,7 @@ namespace WebApiCoelsa.Controllers
             return NoContent();
         }
 
-        // POST: api/Contact
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // POST: api/Contact                
         [HttpPost]
         public async Task<ActionResult<Contact>> PostContact(Contact contact)
         {
