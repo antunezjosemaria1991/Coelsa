@@ -5,8 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApiCoelsa.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using WebApiCoelsa.Interfaces;
 
 namespace WebApiCoelsa
 {
@@ -23,8 +22,9 @@ namespace WebApiCoelsa
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-
+			
 			services.AddDbContext<CoelsaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+			services.AddScoped<IContactRepository, ContactRepository>(); 
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

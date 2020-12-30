@@ -3,7 +3,8 @@
 namespace WebApiCoelsa.Models
 {
 	public class CoelsaDbContext : DbContext
-	{
+	{		
+
 		public CoelsaDbContext(DbContextOptions<CoelsaDbContext> options) : base(options)
 		{
 
